@@ -1,0 +1,36 @@
+[build-system]
+requires = [
+    "setuptools>=61.2",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litepolis-database-particiapi"
+version = "0.0.1"
+authors = [
+    { name = "NewJerseyStyle" },
+]
+description = "The database module for LitePolis that is compatible with ParticiAPP"
+dependencies = [
+    "fastapi",
+    "sqlmodel",
+]
+
+[project.license]
+text = "file: LICENSE"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/NewJerseyStyle/LitePolis-database-particiapi"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+exclude = [
+    "tests",
+]
+namespaces = false

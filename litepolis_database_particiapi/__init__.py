@@ -1,0 +1,2 @@
+from litepolis_database_default import DEFAULT_CONFIG
+from .Actor import DatabaseActor
