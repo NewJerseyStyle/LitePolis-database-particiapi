@@ -7,10 +7,19 @@
 import xml.etree.ElementTree as etree
 import re
 
-import markdown
-from markdown.blockprocessors import BlockProcessor, EmptyBlockProcessor
-from markdown.inlinepatterns import LinkInlineProcessor, LINK_RE
-from markdown.extensions import Extension
+try:
+    import markdown
+    from markdown.blockprocessors import BlockProcessor, EmptyBlockProcessor
+    from markdown.inlinepatterns import LinkInlineProcessor, LINK_RE
+    from markdown.extensions import Extension
+    MARKDOWN_AVAILABLE = True
+except ImportError:
+    MARKDOWN_AVAILABLE = False
+    # Create dummy classes for when markdown is not available
+    Extension = object
+    BlockProcessor = object
+    LinkInlineProcessor = object
+    LINK_RE = None
 
 
 BLOCK_PROCESSORS_WHITELIST = { "empty" }

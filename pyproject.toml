@@ -14,6 +14,7 @@ description = "The database module for LitePolis that is compatible with Partici
 dependencies = [
     "fastapi",
     "sqlmodel",
+    "markdown>=3.0.0",
 ]
 
 [project.license]
